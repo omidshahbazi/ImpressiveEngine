@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Impressive Engine", "Impressive Engine\Impressive Engine.vcxproj", "{288680FC-1E79-48DC-8098-159494439DF4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Plugin_PhysX", "Plugin_PhysX\Plugin_PhysX.vcxproj", "{CFEBAD6F-43C6-4DCB-804D-64AD7B136F7B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug Launcher|Win32 = Debug Launcher|Win32
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{288680FC-1E79-48DC-8098-159494439DF4}.Debug Launcher|Win32.ActiveCfg = Debug Launcher|Win32
+		{288680FC-1E79-48DC-8098-159494439DF4}.Debug Launcher|Win32.Build.0 = Debug Launcher|Win32
+		{288680FC-1E79-48DC-8098-159494439DF4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{288680FC-1E79-48DC-8098-159494439DF4}.Debug|Win32.Build.0 = Debug|Win32
+		{288680FC-1E79-48DC-8098-159494439DF4}.Release|Win32.ActiveCfg = Release|Win32
+		{288680FC-1E79-48DC-8098-159494439DF4}.Release|Win32.Build.0 = Release|Win32
+		{CFEBAD6F-43C6-4DCB-804D-64AD7B136F7B}.Debug Launcher|Win32.ActiveCfg = Debug|Win32
+		{CFEBAD6F-43C6-4DCB-804D-64AD7B136F7B}.Debug Launcher|Win32.Build.0 = Debug|Win32
+		{CFEBAD6F-43C6-4DCB-804D-64AD7B136F7B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CFEBAD6F-43C6-4DCB-804D-64AD7B136F7B}.Debug|Win32.Build.0 = Debug|Win32
+		{CFEBAD6F-43C6-4DCB-804D-64AD7B136F7B}.Release|Win32.ActiveCfg = Release|Win32
+		{CFEBAD6F-43C6-4DCB-804D-64AD7B136F7B}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

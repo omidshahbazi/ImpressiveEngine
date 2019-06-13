@@ -1,0 +1,93 @@
+struct VertexToFragment
+{
+
+	float4 ProjCoord:TEXCOORD0;
+	float4 Position : POSITION;
+	float3 LStart:TEXCOORD1;
+	float3 LEnd:TEXCOORD2;
+};
+
+
+
+void fmain(uniform sampler2D Tex1,uniform sampler2D Tex2,out float4 Color0: COLOR0,uniform sampler2D NormalTex,uniform float3 sunDirection,uniform float2 bumpDelta,VertexToFragment IN,uniform float4 WaterColor,uniform float4 DiffuseColor)
+{
+
+	
+	float4 SpecularColor=float4(0.6f,0.6f,0.6f,0.6f);
+	float SpecularExponent=32.0f;
+
+	float3 lVec=IN.LEnd-IN.LStart;
+	float3 lDir=normalize(lVec);
+	float lLength=length(lVec);
+	float currentDepth=tex2D(Tex2,IN.ProjCoord.xy).a*lLength;
+	float3 currentWPos=IN.LStart+currentDepth*lDir;
+
+	float4 screenColor=tex2D(Tex1,IN.ProjCoord.xy);
+	float3 planeNormal=float3(0.0f,IN.LStart.y<0.0f ? -1.0f : 1.0f,0.0f);
+	float planeDP=dot(planeNormal,lDir);
+	if(IN.LStart.y < 0.0f)
+		screenColor*=WaterColor;
+	float4 finalColour=screenColor;
+	if(planeDP < 0.0)
+	{
+		float planeDepth = -dot(planeNormal, IN.LStart) / planeDP;
+
+		if(planeDepth < currentDepth && planeDepth < lLength)
+		{
+			float distFromWaterLevel;
+			if(currentWPos.y<0.0f)
+				distFromWaterLevel=-currentWPos.y;
+			else
+				distFromWaterLevel=currentWPos.y;
+
+			distFromWaterLevel/=10000.0f;
+			distFromWaterLevel=1.0f-distFromWaterLevel;
+
+			//finalColour*=WaterColor*distFromWaterLevel;
+
+
+			float3 planePos = IN.LStart + lDir * planeDepth;
+		
+			float heightDiff = sin(planePos.x / 20.0) + sin(planePos.z / 20.0);
+			planePos.y += heightDiff;
+			float4 normalMap = tex2D(NormalTex, (planePos.xz / 50.0)+bumpDelta);
+			float3 lightNormal = normalMap.xyz - float3(0.5, 0.5, 0.5);
+			lightNormal = normalize(lightNormal);
+			float2 refCoords = clamp(IN.ProjCoord.xy + lightNormal.xy / 20.0, float2(0.01, 0.01), float2(0.99, 0.99));
+			float refDepth = tex2D(Tex2,IN.ProjCoord.xy).a * lLength;
+			
+			finalColour = WaterColor;
+
+			if(refDepth - 0.5f > planeDepth)
+				finalColour *= tex2D(Tex1, refCoords);
+			else
+				finalColour *= screenColor;
+
+			
+			float diffuse = dot(lightNormal, sunDirection);
+			float3 Reflect = normalize(2.0 * diffuse * lightNormal - sunDirection);
+			float4 specular = pow(saturate(dot(Reflect, lDir)), SpecularExponent) * SpecularColor;
+			//finalColour *= DiffuseColor*float4(diffuse,diffuse,diffuse,1.0f);
+			finalColour += specular;
+
+
+
+			//float4 foamColour = float4(0.8, 0.8, 0.8, 0.8)*5;			
+			//float foamFac = clamp(((currentDepth - planeDepth - 3.0) / 5.0), 0.0, 1.0);
+			//finalColour = lerp(foamColour, finalColour, foamFac);
+
+			float shoreFac = clamp((currentDepth - planeDepth) / 20.0, 0.0, 1.0);
+
+			finalColour = lerp(screenColor, finalColour, shoreFac);
+			
+
+			float fadeFac = clamp(1.0 - (planeDepth - lLength / 10.0) / lLength, 0.0, 1.0);
+			finalColour = lerp(screenColor, finalColour, fadeFac);
+			
+
+
+		}
+	}
+	
+	Color0=finalColour;//(tex2D(Tex1,IN.ProjCoord.xy)*0.9f + tex2D(Tex1,IN.ProjCoord.xy)*0.0f);
+}

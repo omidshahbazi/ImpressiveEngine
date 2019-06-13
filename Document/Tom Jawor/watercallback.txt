@@ -1,0 +1,101 @@
+		class CPostProcessEffectShaderCallback : public IrrCg::ICgShaderConstantSetCallBack
+		{
+		public:
+			
+			CPostProcessEffectShaderCallback() : IrrCg::ICgShaderConstantSetCallBack()
+			{
+			}
+			CPostProcessEffectCallback *currentCallback;
+			virtual void OnSetConstants( IrrCg::ICgServices* Services,CGprogram Vertex,CGprogram Fragment,const irr::video::SMaterial& Material )
+			{
+
+
+				irr::core::matrix4 Matrix = Services->getDevice()->getVideoDriver()->getTransform(irr::video::ETS_PROJECTION);
+				Matrix *= Services->getDevice()->getVideoDriver()->getTransform(irr::video::ETS_VIEW);
+				Matrix = Services->getDevice()->getVideoDriver()->getTransform(irr::video::ETS_WORLD);
+				Services->setMatrix(cgGetNamedParameter(Vertex, "WorldViewProj"), IrrCg::ICGT_MATRIX_IDENTITY, Matrix);
+
+
+				Services->EnableTexture(cgGetNamedParameter(Fragment,"Tex0"),Material.getTexture(0));
+				Services->EnableTexture(cgGetNamedParameter(Fragment,"Tex1"),Material.getTexture(1));
+				Services->EnableTexture(cgGetNamedParameter(Fragment,"Tex2"),Material.getTexture(2));
+				if(currentCallback)
+					currentCallback->OnPreRender(Material.MaterialType,Services,Vertex,Fragment);
+
+
+				irr::core::dimension2du ScreenSize = Services->getDevice()->getVideoDriver()->getCurrentRenderTargetSize();
+
+
+				Services->setParameter1f(cgGetNamedParameter(Vertex,"ScreenWidth"),(float)(ScreenSize.Width));
+				Services->setParameter1f(cgGetNamedParameter(Vertex,"ScreenHeight"),(float)(ScreenSize.Height));
+
+				
+				Services->setParameter1f(cgGetNamedParameter(Fragment,"ScreenWidth"),(float)(ScreenSize.Width));
+				Services->setParameter1f(cgGetNamedParameter(Fragment,"ScreenHeight"),(float)(ScreenSize.Height));
+
+				irr::core::position2di TLeft = Services->getDevice()->getVideoDriver()->getViewPort().UpperLeftCorner;
+				irr::core::position2di BRight = Services->getDevice()->getVideoDriver()->getViewPort().LowerRightCorner;
+				ISceneManager *smgr=Services->getDevice()->getSceneManager();
+				ICameraSceneNode *cam=0;//smgr->getActiveCamera();
+			const irr::core::line3df sLines[4] =
+			{
+				smgr->getSceneCollisionManager()->getRayFromScreenCoordinates
+				(irr::core::position2di(TLeft.X, TLeft.Y), cam),
+				smgr->getSceneCollisionManager()->getRayFromScreenCoordinates
+				(irr::core::position2di(BRight.X, TLeft.Y), cam),
+				smgr->getSceneCollisionManager()->getRayFromScreenCoordinates
+				(irr::core::position2di(TLeft.X, BRight.Y), cam),
+				smgr->getSceneCollisionManager()->getRayFromScreenCoordinates
+				(irr::core::position2di(BRight.X, BRight.Y), cam)
+			};
+
+				Services->setParameter3f(cgGetNamedParameter(Vertex,"LineStart0"), sLines[0].start.X, sLines[0].start.Y, sLines[0].start.Z);
+				Services->setParameter3f(cgGetNamedParameter(Vertex,"LineStart1"), sLines[1].start.X, sLines[1].start.Y, sLines[1].start.Z);
+				Services->setParameter3f(cgGetNamedParameter(Vertex,"LineStart2"), sLines[2].start.X, sLines[2].start.Y, sLines[2].start.Z);
+				Services->setParameter3f(cgGetNamedParameter(Vertex,"LineStart3"), sLines[3].start.X, sLines[3].start.Y, sLines[3].start.Z);
+
+				Services->setParameter3f(cgGetNamedParameter(Vertex,"LineEnd0"), sLines[0].end.X, sLines[0].end.Y, sLines[0].end.Z);
+				Services->setParameter3f(cgGetNamedParameter(Vertex,"LineEnd1"), sLines[1].end.X, sLines[1].end.Y, sLines[1].end.Z);
+				Services->setParameter3f(cgGetNamedParameter(Vertex,"LineEnd2"), sLines[2].end.X, sLines[2].end.Y, sLines[2].end.Z);
+				Services->setParameter3f(cgGetNamedParameter(Vertex,"LineEnd3"), sLines[3].end.X, sLines[3].end.Y, sLines[3].end.Z);
+
+			}
+		};
+
+
+
+
+	class WaterCB : public beautyInRender::postprocess::CPostProcessEffectCallback
+	{
+	public:
+		WaterCB(ITexture *Tex,ISceneNode *sun)
+		{
+			NormalTex=Tex;
+			sunDirection=vector3df(0,0,10);
+			wind=vector2df(0,0);
+			windDirection=vector2df(0.001f,0.002f);
+			diffuseColor=SColorf(1.0f,0.8,1.0f,1.0f);
+			waterColor=SColorf(0.2f,0.8f,1.0f,1.0f);
+			Sun=sun;
+		}
+		virtual void OnPreRender(irr::video::E_MATERIAL_TYPE Material,IrrCg::ICgServices *services,CGprogram &Vertex,CGprogram &Fragment)
+		{
+			sunDirection=Sun->getAbsolutePosition()-services->getDevice()->getSceneManager()->getActiveCamera()->getAbsolutePosition();
+			wind=wind+windDirection;
+			services->EnableTexture(cgGetNamedParameter(Fragment,"NormalTex"),NormalTex);
+			services->setParameter3f(cgGetNamedParameter(Fragment,"sunDirection"),sunDirection.X,sunDirection.Y,sunDirection.Z);
+			services->setParameter2f(cgGetNamedParameter(Fragment,"bumpDelta"),wind.X,wind.Y);
+			services->setParameter4f(cgGetNamedParameter(Fragment,"WaterColor"),waterColor.getRed(),waterColor.getBlue(),waterColor.getGreen(),waterColor.getAlpha());
+			services->setParameter4f(cgGetNamedParameter(Fragment,"DiffuseColor"),diffuseColor.getRed(),diffuseColor.getBlue(),diffuseColor.getGreen(),diffuseColor.getAlpha());
+		}
+		virtual void OnPostRender(irr::video::E_MATERIAL_TYPE Material)
+		{
+		}
+		ISceneNode *Sun;
+		ITexture *NormalTex;
+		vector3df sunDirection;
+		vector2df wind;
+		vector2df windDirection;
+		SColorf waterColor;
+		SColorf diffuseColor;
+	};

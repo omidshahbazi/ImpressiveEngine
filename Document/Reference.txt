@@ -1,0 +1,30 @@
+-Exception again
+{
+	LPTOP_LEVEL_EXCEPTION_FILTER WINAPI SetUnhandledExceptionFilter(
+	__in LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter
+	);
+	5 hours ago · Unlike · 1
+	Martin Brandstätter and then MiniDumpWriteDump(process,... 
+}
+
+
+Deferred Shading :
+http://www.ogre3d.org/forums/viewtopic.php?f=1&t=67341
+http://frictionalgames.blogspot.com/2010/10/pre-pass-lighting-redux.html
+http://gameangst.com/?p=141
+http://frictionalgames.blogspot.com/2010/12/bye-bye-pre-pass-lighting.html
+http://www.ogre3d.org/tikiwiki/tiki-index.php?page=Deferred+
+
+
+Encryption :
+http://www.cplusplus.com/forum/beginner/1665/
+http://www.cplusplus.com/articles/Ly86b7Xj/
+http://www.daniweb.com/software-development/cpp/threads/96440/encryptdecrypt-a-string
+http://www.nextgenupdate.com/forums/computer-hacking-programming/315704-c-string-encryption-sourcecode.html
+http://www.linuxquestions.org/questions/programming-9/c-string-encryption-420375/
+http://social.msdn.microsoft.com/Forums/en/windowsmobiledev/thread/bd1722e7-07b3-4119-b7de-10788f9f6e36
+http://www.dreamincode.net/forums/topic/259417-strings-encryption-and-decryption/
+
+Terrain :
+http://www.ogre3d.org/forums/viewtopic.php?f=2&t=58756&p=395171&hilit=terrain#p395171
+http://www.ogre3d.org/addonforums/viewtopic.php?f=12&t=13113

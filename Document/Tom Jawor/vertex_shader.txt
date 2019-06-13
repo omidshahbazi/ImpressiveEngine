@@ -1,0 +1,82 @@
+float scale(float cos,float h)
+{
+   float x = 1.0 - cos;
+   return h * exp(-0.00287 + x*(0.459 + x*(3.83 + x*(-6.80 + x*5.25))));
+}
+
+void vmain(
+
+float4 iPosition : POSITION,
+float2 iTexture : TEXCOORD0,
+
+out float4 oPosition:POSITION,
+out float2 oTexture:TEXCOORD0,
+out float3 oViewDir:TEXCOORD1,
+out float4 oRayleighColour:TEXCOORD2,
+out float4 oMieColour:TEXCOORD3,
+out float3 oLightDir : TEXCOORD4,
+out float oDepth :TEXCOORD5,
+uniform float4x4 WorldViewProj,
+uniform float Timer1,
+uniform float SkyDomeRadius,
+uniform float3 ViewPosition,
+uniform float3 InverseWaveLength,
+uniform float Rayleigh4PI,
+uniform float RayleighSunExp,
+uniform float Mie4PI,
+uniform float MieSunExp,
+uniform float Scale,
+uniform float AverageDensityHeight,
+uniform float ScaleOverAverageDensityHeight,
+uniform float NumSamplesFloat
+)
+{
+float3 CameraPosition=float3(0.0f,1.0f,0.0f);
+
+
+
+
+float3 LightDirection = float3(0,sin(Timer1/12*3.14),cos(Timer1/12*3.14));
+
+float3 Position = iPosition.xyz*(200000/SkyDomeRadius);
+Position.y+=1.0f;
+if(iPosition.y<0.0f)
+Position.y=1.0f;
+float3 VertexRay = Position - CameraPosition;
+float VertexDistance = length(VertexRay);
+VertexRay /= VertexDistance;
+float Depth = exp(ScaleOverAverageDensityHeight * (1.0f - (1.0f)));
+float ScatterAngle = dot(VertexRay,CameraPosition)/length(CameraPosition);
+float ScatterOffset=Depth*scale(ScatterAngle,AverageDensityHeight);
+float SampleSegmentLength = VertexDistance / NumSamplesFloat;
+float ScaledSegmentLength = SampleSegmentLength * Scale;
+float3 SampleRay = VertexRay * SampleSegmentLength;
+float3 SamplePoint = CameraPosition + SampleRay * 0.5f;
+float3 Colour = float3(0,0,0);
+
+for (int i = 0; i < 10; i++) 
+{
+      float Height = length(SamplePoint);
+      float Depth = exp(ScaleOverAverageDensityHeight * (1.0f - Height));
+      float LightAngle = dot(LightDirection, SamplePoint) / Height;
+      float CameraAngle = dot(VertexRay, SamplePoint) / Height;
+      float Scatter = ScatterOffset + Depth * (scale(LightAngle,AverageDensityHeight) - scale(CameraAngle,AverageDensityHeight));
+      float3 Attenuation = exp(-Scatter * (InverseWaveLength * Rayleigh4PI + Mie4PI));
+      Attenuation *= Depth * ScaledSegmentLength;
+      Colour += Attenuation;
+      SamplePoint += SampleRay;
+}
+
+float4 tempPos=iPosition;
+tempPos.xyz=ViewPosition.xyz + tempPos.xyz;
+
+oPosition=mul(WorldViewProj,tempPos);
+oRayleighColour.xyz=Colour*(InverseWaveLength*RayleighSunExp);
+oRayleighColour.w=1.0f;
+oMieColour.xyz = Colour * MieSunExp;
+oMieColour.w = 1.0f;
+oViewDir = CameraPosition - Position;
+oTexture = iTexture;
+oLightDir = LightDirection;
+oDepth=oPosition.z/oPosition.w;
+}

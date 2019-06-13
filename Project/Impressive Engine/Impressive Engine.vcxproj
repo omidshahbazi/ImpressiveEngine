@@ -1,0 +1,473 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug Launcher|Win32">
+      <Configuration>Debug Launcher</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>Impressive Engine</ProjectName>
+    <ProjectGuid>{288680FC-1E79-48DC-8098-159494439DF4}</ProjectGuid>
+    <RootNamespace>ImpressiveEngine</RootNamespace>
+    <SccProjectName>Svn</SccProjectName>
+    <SccAuxPath>Svn</SccAuxPath>
+    <SccLocalPath>Svn</SccLocalPath>
+    <SccProvider>SubversionScc</SccProvider>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug Launcher|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(VisualStudioVersion)'=='11.0'" Label="Configuration">
+    <PlatformToolset>v110</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug Launcher|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug Launcher|Win32'">$(SolutionDir)Debug\</OutDir>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug Launcher|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug Launcher|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug Launcher|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug Launcher|Win32'">Launch_d</TargetName>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetName>$(ProjectName)_d</TargetName>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(CPPLibs)Boost\include;$(CPPLibs)wxWidgets\include;$(CPPLibs)wxWidgets\include\wxProgGrid;$(CPPLibs)OGRE\include;$(CPPLibs)Lua\include;$(CPPLibs)LuaBind\include;$(CPPLibs)Scintilla\include;$(CPPLibs)Theora\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG;EDIT_MODE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalLibraryDirectories>$(CPPLibs)Boost\lib;$(CPPLibs)wxWidgets\lib;$(CPPLibs)OGRE\lib;$(CPPLibs)Lua\lib;$(CPPLibs)LuaBind\lib;$(CPPLibs)Scintilla\lib;$(CPPLibs)Theora\lib;$(CPPLibs)Ogg\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <TargetMachine>MachineX86</TargetMachine>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <ProjectReference>
+      <UseLibraryDependencyInputs>true</UseLibraryDependencyInputs>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <AdditionalIncludeDirectories>$(CPPLibs)wxWidgets\include;$(CPPLibs)wxWidgets\include\wxProgGrid;$(CPPLibs)OGRE\include;$(CPPLibs)Lua\include;$(CPPLibs)LuaBind\include;$(CPPLibs)Scintilla\include;..\..\..\AI\AIEngine\AIEngine;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>EDIT_MODE;DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <AdditionalLibraryDirectories>$(CPPLibs)wxWidgets\lib;$(CPPLibs)OGRE\Release\lib;$(CPPLibs)Lua\lib\x86;$(CPPLibs)LuaBind\lib;$(CPPLibs)Scintilla\lib;..\..\..\AI\AIEngine\Debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug Launcher|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(CPPLibs)wxWidgets\include;$(CPPLibs)OGRE\include;$(CPPLibs)OIS\include;$(CPPLibs)Lua\include;$(CPPLibs)LuaBind\include;$(CPPLibs)Boost\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(TargetPath)</OutputFile>
+      <AdditionalLibraryDirectories>$(CPPLibs)Boost\lib;$(CPPLibs)wxWidgets\lib;$(CPPLibs)Ogre\lib;$(CPPLibs)OIS\lib;$(CPPLibs)Lua\lib;$(CPPLibs)LuaBind\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>
+      </IgnoreSpecificDefaultLibraries>
+      <IgnoreAllDefaultLibraries>
+      </IgnoreAllDefaultLibraries>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+    <ProjectReference>
+      <LinkLibraryDependencies>false</LinkLibraryDependencies>
+    </ProjectReference>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AboutWindow.cpp" />
+    <ClCompile Include="AdditionProperties.cpp" />
+    <ClCompile Include="AICommanderObject.cpp" />
+    <ClCompile Include="AIObjectFeatures.cpp" />
+    <ClCompile Include="AISellerObject.cpp" />
+    <ClCompile Include="AISoldierObject.cpp" />
+    <ClCompile Include="AIStateCommander.cpp" />
+    <ClCompile Include="AIStateCommanderEvaluator.cpp" />
+    <ClCompile Include="AIStateSeller.cpp" />
+    <ClCompile Include="AIStateSellerEvaluator.cpp" />
+    <ClCompile Include="AIStateShopping.cpp" />
+    <ClCompile Include="AIStateShoppingEvaluator.cpp" />
+    <ClCompile Include="AIStateWallFollow.cpp" />
+    <ClCompile Include="AmbientLight.cpp" />
+    <ClCompile Include="BaseObject.cpp" />
+    <ClCompile Include="AIBrain.cpp" />
+    <ClCompile Include="AIEnemyObject.cpp" />
+    <ClCompile Include="AIEngine.cpp" />
+    <ClCompile Include="AIMemorySensor.cpp" />
+    <ClCompile Include="DSCommon.cpp" />
+    <ClCompile Include="CustomerStand.cpp" />
+    <ClCompile Include="DeferredLightingPass.cpp" />
+    <ClCompile Include="DeferredShadingSystem.cpp" />
+    <ClCompile Include="DSLightRenderable.cpp" />
+    <ClCompile Include="DSMaterialGenerator.cpp" />
+    <ClCompile Include="DSTerrainMaterialGenerator.cpp" />
+    <ClCompile Include="EditorMaterialGenerator.cpp" />
+    <ClCompile Include="EditorScene.cpp" />
+    <ClCompile Include="GameMap.cpp" />
+    <ClCompile Include="CompilerSettings.h" />
+    <ClCompile Include="GBufferMaterialGenerator.cpp" />
+    <ClCompile Include="GBufferSchemeListener.cpp" />
+    <ClCompile Include="Light.cpp" />
+    <ClCompile Include="LightMaterialGenerator.cpp" />
+    <ClCompile Include="MaterialGenerator.cpp" />
+    <ClCompile Include="NavigationGraph.cpp" />
+    <ClCompile Include="NoGBufferSchemeListener.cpp" />
+    <ClCompile Include="PluginManager.cpp" />
+    <ClCompile Include="SceneMaterialGenerator.cpp" />
+    <ClCompile Include="SparseGraphThreadWorker.cpp" />
+    <ClCompile Include="MovingObject.cpp" />
+    <ClCompile Include="AINPCObject.cpp" />
+    <ClCompile Include="AIStateExplore.cpp" />
+    <ClCompile Include="AIStateExploreEvaluator.cpp" />
+    <ClCompile Include="AIStateGuard.cpp" />
+    <ClCompile Include="AIStateIdle.cpp" />
+    <ClCompile Include="AIStateIdleEvaluator.cpp" />
+    <ClCompile Include="AIStateMoveToPosition.cpp" />
+    <ClCompile Include="AIObject.cpp" />
+    <ClCompile Include="AIStatePathFollow.cpp" />
+    <ClCompile Include="AIStateGuardEvaluator.cpp" />
+    <ClCompile Include="AIStateSeekToPosition.cpp" />
+    <ClCompile Include="AIStateTraverseEdge.cpp" />
+    <ClCompile Include="AITimer.cpp" />
+    <ClCompile Include="AnimationControl.cpp" />
+    <ClCompile Include="Animator.cpp" />
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="AtmosphereManager.cpp" />
+    <ClCompile Include="Attributes.cpp" />
+    <ClCompile Include="AVIRecorder.cpp" />
+    <ClCompile Include="CoreFunctionality.cpp" />
+    <ClCompile Include="DebugDrawer.cpp" />
+    <ClCompile Include="EditorListener.cpp" />
+    <ClCompile Include="Node.cpp" />
+    <ClCompile Include="OgreDebugDrawer.cpp" />
+    <ClCompile Include="DoClasses.cpp" />
+    <ClCompile Include="Edge.cpp" />
+    <ClCompile Include="Editor.cpp" />
+    <ClCompile Include="EditorCamera.cpp" />
+    <ClCompile Include="Engine.cpp" />
+    <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="EntityControl.cpp" />
+    <ClCompile Include="FrameListener.cpp" />
+    <ClCompile Include="Exception.cpp" />
+    <ClCompile Include="File.cpp" />
+    <ClCompile Include="FileSecurity.cpp" />
+    <ClCompile Include="GameObjectFactory.cpp" />
+    <ClCompile Include="Gorilla.cpp" />
+    <ClCompile Include="GraphEdge.cpp" />
+    <ClCompile Include="SparseGraph.cpp" />
+    <ClCompile Include="GraphNode.cpp" />
+    <ClCompile Include="MeshGameObject.cpp" />
+    <ClCompile Include="Message.cpp" />
+    <ClCompile Include="MessageDispatcher.cpp" />
+    <ClCompile Include="PathManagerThreadWorker.cpp" />
+    <ClCompile Include="GraphSearchAstar.cpp" />
+    <ClCompile Include="HID.cpp" />
+    <ClCompile Include="IO.cpp" />
+    <ClCompile Include="LightGameObject.cpp" />
+    <ClCompile Include="Log.cpp" />
+    <ClCompile Include="LogControl.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainWindow.cpp" />
+    <ClCompile Include="MaterialEditorControl.cpp" />
+    <ClCompile Include="MaterialPageControl.cpp" />
+    <ClCompile Include="Mathematics.cpp" />
+    <ClCompile Include="NavGraphGenWindow.cpp" />
+    <ClCompile Include="ModelEditorControl.cpp" />
+    <ClCompile Include="NodeBase.cpp" />
+    <ClCompile Include="CameraGameObject.cpp" />
+    <ClCompile Include="ManualFunctionality.cpp" />
+    <ClCompile Include="OceanGameObject.cpp" />
+    <ClCompile Include="ParticleGameObject.cpp" />
+    <ClCompile Include="PathEdge.cpp" />
+    <ClCompile Include="PathManager.cpp" />
+    <ClCompile Include="PathPlanner.cpp" />
+    <ClCompile Include="Properties.cpp" />
+    <ClCompile Include="PropertiesControl.cpp" />
+    <ClCompile Include="Ray.cpp" />
+    <ClCompile Include="RegistryKey.cpp" />
+    <ClCompile Include="RenderControl.cpp" />
+    <ClCompile Include="RenderControlBase.cpp" />
+    <ClCompile Include="Scene.cpp" />
+    <ClCompile Include="GameObject.cpp" />
+    <ClCompile Include="SceneControl.cpp" />
+    <ClCompile Include="ScenesHolder.cpp" />
+    <ClCompile Include="ScintillaPageControl.cpp" />
+    <ClCompile Include="Script.cpp" />
+    <ClCompile Include="Scriptable.cpp" />
+    <ClCompile Include="ScriptControl.cpp" />
+    <ClCompile Include="ScriptPageControl.cpp" />
+    <ClCompile Include="ScriptTypesDefinition.cpp" />
+    <ClCompile Include="ShadowManager.cpp" />
+    <ClCompile Include="Stats.cpp" />
+    <ClCompile Include="StatusBarControl.cpp" />
+    <ClCompile Include="SteeringBehaviors.cpp" />
+    <ClCompile Include="SystemTime.cpp" />
+    <ClCompile Include="TerrainGameObject.cpp" />
+    <ClCompile Include="TerrainWindow.cpp" />
+    <ClCompile Include="ThreadHandler.cpp" />
+    <ClCompile Include="ThreadingManager.cpp" />
+    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="TrackAnimator.cpp" />
+    <ClCompile Include="TreeElement.cpp" />
+    <ClCompile Include="VideoCapture.cpp" />
+    <ClCompile Include="ViewPortsManager.cpp" />
+    <ClCompile Include="VirtualMachine.cpp" />
+    <ClCompile Include="VirtualMachineDebugger.cpp" />
+    <ClCompile Include="WindowBase.cpp" />
+    <ClCompile Include="TreeParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AboutWindow.h" />
+    <ClInclude Include="AdditionProperties.h" />
+    <ClInclude Include="AICommanderObject.h" />
+    <ClInclude Include="AIObjectFeatures.h" />
+    <ClInclude Include="AISellerObject.h" />
+    <ClInclude Include="AISoldierObject.h" />
+    <ClInclude Include="AIStateCommander.h" />
+    <ClInclude Include="AIStateCommanderEvaluator.h" />
+    <ClInclude Include="AIStateSeller.h" />
+    <ClInclude Include="AIStateSellerEvaluator.h" />
+    <ClInclude Include="AIStateShopping.h" />
+    <ClInclude Include="AIStateShoppingEvaluator.h" />
+    <ClInclude Include="AIStateWallFollow.h" />
+    <ClInclude Include="AmbientLight.h" />
+    <ClInclude Include="BaseObject.h" />
+    <ClInclude Include="AIBrain.h" />
+    <ClInclude Include="AIEnemyObject.h" />
+    <ClInclude Include="AIEngine.h" />
+    <ClInclude Include="AIMemoryRecord.h" />
+    <ClInclude Include="AIMemorySensor.h" />
+    <ClInclude Include="Common.h" />
+    <ClInclude Include="DSCommon.h" />
+    <ClInclude Include="CustomerStand.h" />
+    <ClInclude Include="DeferredLightingPass.h" />
+    <ClInclude Include="DeferredShadingSystem.h" />
+    <ClInclude Include="DSLightRenderable.h" />
+    <ClInclude Include="DSMaterialGenerator.h" />
+    <ClInclude Include="DSTerrainMaterialGenerator.h" />
+    <ClInclude Include="EditorMaterialGenerator.h" />
+    <ClInclude Include="EditorScene.h" />
+    <ClInclude Include="GameMap.h" />
+    <ClInclude Include="GBufferMaterialGenerator.h" />
+    <ClInclude Include="GBufferSchemeListener.h" />
+    <ClInclude Include="IDynamicRigidBody.h" />
+    <ClInclude Include="IPhysicsEngine.h" />
+    <ClInclude Include="IPhysicsScene.h" />
+    <ClInclude Include="IPlugin.h" />
+    <ClInclude Include="IRigidBody.h" />
+    <ClInclude Include="IStaticRigidBody.h" />
+    <ClInclude Include="Light.h" />
+    <ClInclude Include="LightMaterialGenerator.h" />
+    <ClInclude Include="MaterialGenerator.h" />
+    <ClInclude Include="NavigationGraph.h" />
+    <ClInclude Include="NoGBufferSchemeListener.h" />
+    <ClInclude Include="PluginManager.h" />
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="SceneMaterialGenerator.h" />
+    <ClInclude Include="SparseGraphThreadWorker.h" />
+    <ClInclude Include="MovingObject.h" />
+    <ClInclude Include="AINPCObject.h" />
+    <ClInclude Include="AIObjectType.h" />
+    <ClInclude Include="AIStateEvaluator.h" />
+    <ClInclude Include="AIStateExplore.h" />
+    <ClInclude Include="AIStateExploreEvaluator.h" />
+    <ClInclude Include="AIStateGuard.h" />
+    <ClInclude Include="AIStateIdle.h" />
+    <ClInclude Include="AIStateIdleEvaluator.h" />
+    <ClInclude Include="AIStateMoveToPosition.h" />
+    <ClInclude Include="AIStatePathFollow.h" />
+    <ClInclude Include="AIStateGuardEvaluator.h" />
+    <ClInclude Include="AIStateSeekToPosition.h" />
+    <ClInclude Include="AIStateTraverseEdge.h" />
+    <ClInclude Include="AIStateTypes.h" />
+    <ClInclude Include="AIObject.h" />
+    <ClInclude Include="AITimer.h" />
+    <ClInclude Include="AnimationControl.h" />
+    <ClInclude Include="Animator.h" />
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="AtmosphereManager.h" />
+    <ClInclude Include="Attribute.h" />
+    <ClInclude Include="Attributes.h" />
+    <ClInclude Include="AVIRecorder.h" />
+    <ClInclude Include="CoreFunctionality.h" />
+    <ClInclude Include="DebugDrawer.h" />
+    <ClInclude Include="EditorListener.h" />
+    <ClInclude Include="Node.h" />
+    <ClInclude Include="OgreDebugDrawer.h" />
+    <ClInclude Include="DoClasses.h" />
+    <ClInclude Include="Edge.h" />
+    <ClInclude Include="Editor.h" />
+    <ClInclude Include="EditorCamera.h" />
+    <ClInclude Include="Engine.h" />
+    <ClInclude Include="Entity.h" />
+    <ClInclude Include="EntityControl.h" />
+    <ClInclude Include="FrameListener.h" />
+    <ClInclude Include="Exception.h" />
+    <ClInclude Include="File.h" />
+    <ClInclude Include="FileSecurity.h" />
+    <ClInclude Include="AIState.h" />
+    <ClInclude Include="AIDecisionMaker.h" />
+    <ClInclude Include="GameObjectFactory.h" />
+    <ClInclude Include="Gorilla.h" />
+    <ClInclude Include="GraphEdge.h" />
+    <ClInclude Include="SparseGraph.h" />
+    <ClInclude Include="GraphNode.h" />
+    <ClInclude Include="MeshGameObject.h" />
+    <ClInclude Include="Message.h" />
+    <ClInclude Include="MessageDispatcher.h" />
+    <ClInclude Include="MessageTypes.h" />
+    <ClInclude Include="PathManagerThreadWorker.h" />
+    <ClInclude Include="GraphSearchAstar.h" />
+    <ClInclude Include="HID.h" />
+    <ClInclude Include="IO.h" />
+    <ClInclude Include="LightGameObject.h" />
+    <ClInclude Include="Log.h" />
+    <ClInclude Include="LogControl.h" />
+    <ClInclude Include="MainWindow.h" />
+    <ClInclude Include="MaterialEditorControl.h" />
+    <ClInclude Include="MaterialPageControl.h" />
+    <ClInclude Include="Mathematics.h" />
+    <ClInclude Include="NavGraphGenWindow.h" />
+    <ClInclude Include="ModelEditorControl.h" />
+    <ClInclude Include="NodeBase.h" />
+    <ClInclude Include="CameraGameObject.h" />
+    <ClInclude Include="ManualFunctionality.h" />
+    <ClInclude Include="OceanGameObject.h" />
+    <ClInclude Include="ParticleGameObject.h" />
+    <ClInclude Include="PathEdge.h" />
+    <ClInclude Include="PathManager.h" />
+    <ClInclude Include="PathPlanner.h" />
+    <ClInclude Include="PriorityQueue.h" />
+    <ClInclude Include="Properties.h" />
+    <ClInclude Include="PropertiesControl.h" />
+    <ClInclude Include="IPropertiesListener.h" />
+    <ClInclude Include="Ray.h" />
+    <ClInclude Include="RegistryKey.h" />
+    <ClInclude Include="RenderControl.h" />
+    <ClInclude Include="RenderControlBase.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="SceneControl.h" />
+    <ClInclude Include="ScenesHolder.h" />
+    <ClInclude Include="ScintillaPageControl.h" />
+    <ClInclude Include="Script.h" />
+    <ClInclude Include="Scriptable.h" />
+    <ClInclude Include="ScriptControl.h" />
+    <ClInclude Include="ScriptPageControl.h" />
+    <ClInclude Include="ISerializable.h" />
+    <ClInclude Include="ScriptRegister.h" />
+    <ClInclude Include="ScriptTypesDefinition.h" />
+    <ClInclude Include="ShadowManager.h" />
+    <ClInclude Include="Singleton.h" />
+    <ClInclude Include="Stats.h" />
+    <ClInclude Include="StatusBarControl.h" />
+    <ClInclude Include="StdAfxBoost.h" />
+    <ClInclude Include="StdAfxLua.h">
+      <DeploymentContent>false</DeploymentContent>
+    </ClInclude>
+    <ClInclude Include="StdAfxOGRE.h" />
+    <ClInclude Include="StdAfxOIS.h" />
+    <ClInclude Include="StdAfxScintilla.h" />
+    <ClInclude Include="StdAfxTheora.h" />
+    <ClInclude Include="StdAfxwxWidgets.h" />
+    <ClInclude Include="SteeringBehaviors.h" />
+    <ClInclude Include="SteeringBehaviorTypes.h" />
+    <ClInclude Include="SystemTime.h" />
+    <ClInclude Include="TerrainGameObject.h" />
+    <ClInclude Include="TerrainWindow.h" />
+    <ClInclude Include="IThreadWorker.h" />
+    <ClInclude Include="ThreadHandler.h" />
+    <ClInclude Include="ThreadingManager.h" />
+    <ClInclude Include="Time.h" />
+    <ClInclude Include="GraphSearchTimeSliced.h" />
+    <ClInclude Include="TrackAnimator.h" />
+    <ClInclude Include="TreeElement.h" />
+    <ClInclude Include="Utility.h" />
+    <ClInclude Include="VideoCapture.h" />
+    <ClInclude Include="ViewPortsManager.h" />
+    <ClInclude Include="VirtualMachine.h" />
+    <ClInclude Include="VirtualMachineDebugger.h" />
+    <ClInclude Include="WaypointType.h" />
+    <ClInclude Include="WindowBase.h" />
+    <ClInclude Include="TreeParser.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Icon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Impressive Engine.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="Impressive Engine.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

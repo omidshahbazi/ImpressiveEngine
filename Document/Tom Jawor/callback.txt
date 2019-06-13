@@ -1,0 +1,53 @@
+	class AtmosphereScatteringCB : public ICgShaderConstantSetCallBack
+	{
+	public:
+		AtmosphereScatteringCB()
+		{
+			InverseWaveLength=vector3df(5.60205f,9.4732f,19.643f);
+			Rayleigh4PI=0.03142f;
+			RayleighSunExp=0.05f;
+			Mie4PI=0.01257f;
+			MieSunExp=0.02f;
+			Scale=40.0f;
+			AverageDensityHeight=0.48f;
+			ScaleOverAverageDensityHeight=100.00015f;
+			NumSamplesFloat=16.0f;
+			SkyDomeRadius=2520000000.0f;
+		}
+		float Time;
+		float SkyDomeRadius;
+		vector3df InverseWaveLength;
+		float Rayleigh4PI;
+		float RayleighSunExp;
+		float Mie4PI;
+		float MieSunExp;
+		float Scale;
+		float AverageDensityHeight;
+		float ScaleOverAverageDensityHeight;
+		float NumSamplesFloat;
+		virtual void OnSetConstants( ICgServices* Services,CGprogram Vertex,CGprogram Fragment,const irr::video::SMaterial& Material )
+		{
+			irr::core::matrix4 Matrix;
+			irr::core::vector3df pos=Services->getDevice()->getSceneManager()->getActiveCamera()->getAbsolutePosition();;
+			
+			Matrix = Services->getDevice()->getVideoDriver()->getTransform(video::ETS_PROJECTION);
+			Matrix *= Services->getDevice()->getVideoDriver()->getTransform(video::ETS_VIEW);
+			Matrix *= Services->getDevice()->getVideoDriver()->getTransform(video::ETS_WORLD);
+			Services->setMatrix(cgGetNamedParameter(Vertex, "WorldViewProj"), ICGT_MATRIX_IDENTITY, Matrix);
+
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"Timer1"),Time);
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"SkyDomeRadius"),SkyDomeRadius);
+			Services->setParameter3f(cgGetNamedParameter(Vertex,"ViewPosition"),pos.X,pos.Y,pos.Z);
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"Rayleigh4PI"),Rayleigh4PI);
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"RayleighSunExp"),RayleighSunExp);
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"Mie4PI"),Mie4PI);
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"MieSunExp"),MieSunExp);
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"Scale"),Scale);
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"AverageDensityHeight"),AverageDensityHeight);
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"ScaleOverAverageDensityHeight"),ScaleOverAverageDensityHeight);
+			Services->setParameter1f(cgGetNamedParameter(Vertex,"NumSamplesFloat"),NumSamplesFloat);
+			Services->setParameter3f(cgGetNamedParameter(Vertex,"InverseWaveLength"),InverseWaveLength.X,InverseWaveLength.Y,InverseWaveLength.Z);
+			Services->EnableTexture(cgGetNamedParameter(Fragment,"NightSkyTex"),Material.TextureLayer[0].Texture);
+		}
+
+	};

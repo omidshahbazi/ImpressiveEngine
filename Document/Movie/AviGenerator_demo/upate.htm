@@ -1,0 +1,237 @@
+<!-- HTML for article "A class to easily generate AVI video with OpenGL and Video for Windows" by Jonathan de Halleux
+     URL: http://www.codeproject.com/audio/avigenerator.asp
+
+     Article content copyright Jonathan de Halleux
+     All formatting, additions and alterations Copyright © CodeProject, 2002
+-->
+<!----------------------------- Ignore ----------------------------->
+<link rel="stylesheet" type=text/css href="http://www.codeproject.com/styles/global.css">
+<p><b>Please choose 'View Source' in your browser to view the HTML, or  
+File | Save to save this file to your hard drive for editing.</b></p>
+<hr size=1 noshade>
+<!----------------------------- Ignore ----------------------------->
+
+
+<!----------------------------- Article Starts ----------------------------->
+
+
+<!-- Download Links -->
+<ul class=download>
+<li><a href='AviGenerator/AviGenerator_src.zip'>Download source files - 4 Kb</a></li>
+<li><a href='AviGenerator/AviGenerator_demo.zip'>Download demo project - 24 Kb</a></li>
+<li><a href='AviGenerator/AviGenerator_exe.zip'>Download executable - 9 Kb</a></li>
+</ul>
+
+<!-- Article image -->
+<p><img src="AviGenerator/AviGenerator.jpg" alt="Sample Image - AviGenerator.jpg" height="361" width="500"></p>
+
+<!-- Add the rest of your HTML here -->
+<h2>Introduction</h2>
+<p><code>CAviGenerator</code> is a simple wrapper for the Video For Windows (VFW) library. 
+In the back, it takes care of a numerous initialization for you and hides the library function calls so
+that the user can start generating movies in a minimal number of line of code and without having much knowledge about
+VFW.</p>
+
+<p>The class main features are: 
+<ul>
+<li>generation of AVI movies with any codec installed on your machine</li>
+<li>no need of generating thousands of separate images,</li>
+<li>simplicity of use</li>
+</ul>
+</p>
+
+<p>The class <code>CAVIGenerator</code> takes it's inspiration from MSDN example <i>writeavi.c</i>.</p>
+
+
+<h2>CAVIGenerator: A AVI Video wrapper</h2>
+
+<p>A simple class that make creation of AVI video easy.</p>
+
+
+<h3>Attributes</h3>
+
+<p>Each object contains general charateristics of the movie such as 
+<ul>
+<li>the file name,</li>
+<li>the frame rate, (fps)</li>
+<li>the image description: <code>BITMAPINFOHEADER</code></li> 
+These members are declared as protected and are accessible by Set methods.</p>
+
+<p>It contains also private members that are used to handle the "Video for Windows"
+AVI engine.</p>
+
+<h3>Constructors</h3>
+
+<pre>CAVIGenerator();
+</pre>
+<p>Default constructor, default file name is "Untitled.avi", frame rate is 30 fps.</p>
+
+<pre>CAVIGenerator(LPCTSTR sFileName, CView* pView, DWORD dwRate);
+</pre>
+<p>In-place constructor with CView. See <code>SetBitmapHeader(CView* pView)</code>.</p>
+
+<pre>CAVIGenerator(LPCTSTR sFileName, LPBITMAPINFOHEADER lpbih, DWORD dwRate);
+</pre>
+<p>In-place constructor with <code>BITMAPINFOHEADER</code>. See <code>SetBitmapHeader(LPBITMAPINFOHEADER lpbih)</code></p>
+
+
+<h3>Setters and Getters</h3>
+
+<pre>void SetFileName(const CString& _sFileName)
+</pre>
+<p><code>SetFileName</code> sets the name of the output file. The filename extension should be 
+<i>.avi</i> otherwize the creation of the AVI won't work. Checking of .avi extension
+is left to the user.</p>
+
+<pre>void SetRate(DWORD dwRate)
+</pre>	
+<p><code>SetRate</code> sets the frame rate (fps).</p>
+
+<pre>void SetBitmapHeader(CView* pView);
+</pre>	
+<p><code>SetBitmapHeader</code> fills in the information about the bitmap
+in <code>m_bih</code> using using from the view the view <code>pView</code> the  width, height,
+24 bit/color, and BRG. It makes sure that the width and height are both multiple of 4.</p>
+
+<pre>void SetBitmapHeader(LPBITMAPINFOHEADER lpbih);
+</pre>	
+<p><code>SetBitmapHeader</code> sets the bitmap info as in lpbih.  It supposes that the
+user knows what he's doing.</p>
+
+<pre>LPBITMAPINFOHEADER GetBitmapHeader()
+</pre>
+<p><code>GetBitmapHeader</code> returns a pointer to bitmap info header structure.</p>
+
+
+<h3>AVI creation Functions</h3>
+<pre>HRESULT InitEngine();
+</pre>
+<p><code>InitEngine</code> 
+initializes the VFW engine and chooses a codec. This function has to be
+called before starting to grab frames. Some asserts are 
+made to check that bitmap info has been properly initialized.
+It returns the last HRESULT. If something fails,
+the error message can be retreived using GetLastErrorMessage().
+<pre>
+CAviGenerator avi;
+HRESULT hr;
+
+hr=avi.InitEngine();
+if (FAILED(hr))
+{
+    AfxMessageBox(avi.GetLastErrorMessage());
+    ...
+}
+</pre>
+</p>
+
+<pre>HRESULT AddFrame(BYTE* bmBits);
+</pre>
+<p><code>AddFrame</code> adds a frame to the movie. The data pointed by 
+<code>bmBits</code> should be compatible with the bitmap description
+made by <code>SetBitmapHeader</code>. Typically with OpenGL, 
+<code>bmBits</code> is the buffer read when using <code>glReadPixels</code>.
+As for <code>InitEnginge</code>, it returns the HRESULT.</p>
+
+<pre>void ReleaseEngine();</pre>
+<p><code>ReleaseEngine</code> releases ressources allocated for movie and close the file.
+</p>
+
+<h2>Using CAVIGenerator</h2>
+
+<p>You have to follow these steps:</p>
+
+<ol>
+<li>Set the file name (optional), frame rate (optional) and bitmap info (required). 
+If you want to grab an OpenGL
+screen, just send a pointer of the <code>CView</code> object to the 
+<code>SetBitmapHeader</code> function. Alternative, the user can fill in the 
+<code>BITMAPINFOHEADER</code> structure himself. Make sure that dimension of bitmap are
+a multiple of 4.</li>
+
+<li>Initialize the AVI engine calling <code>InitEngine</code>. A dialog box will
+popup to choose and fill in the parameters of the codec.</li>
+
+<li>For each frame: Do the drawing stuff, fill the image buffer with BRG ordering and send it to the AVI engine using <code>AddFrame</code>.</li>
+
+<li>Release ressources and close file by calling <code>ReleaseEngine</code>.</li>
+
+</ol>
+
+
+<p>And you're are done! Here's some demo pseudo-code:</p>
+<pre>	CAVIGenerator AviGen;	// generator
+	BYTE* bmBits;	// image buffer
+	HRESULT hr;
+
+	AviGen.SetRate(20);	// set 20fps
+	AviGen.SetBitmapHeader(GetActiveView());	// get bitmap info out of the view
+	hr=AviGen.InitEngine()	// start engine
+	if (FAILED(hr))
+	{
+	    AfxMessageBox(avi.GetLastErrorMessage());
+	    goto Cleaning;
+	}
+
+	LPBITMAPINFOHEADER lpbih=AviGen.GetBitmapInfo(); // getting bitmap info
+	bmBits=new BYTE[3 /* BRG*/ * lpbih-&gt;biWidth* lpbih-&gt;biHeight];	// allocating memory for bmBits
+	for (int i=0;i&lt;100;i++)	// make 100 frames
+	{
+		// TODO pust your draw code here.	
+		 /* Draw code where bmBits is filled. 
+		 For example, to read OpenGL buffer, put 
+		 glReadPixels(0,0,lpbih-&gt;biWidth,lpbih-&gt;biHeight,GL_BGR_EXT,GL_UNSIGNED_BYTE,bmBits); */ 
+
+		// adding frame and continue if OK
+		hr=AviGen.AddFrame(bmBits);
+		if (FAILED(hr))
+		{
+		    AfxMessageBox(avi.GetLastErrorMessage());
+		    goto Cleaning;
+		}
+	}
+	
+	// cleaning memory	
+	Cleaning:
+	AviGen.ReleaseEngine(); // releasing ressources
+	delete[] bmBits;	// release ressources</pre>
+
+
+<h2>Adding CAVIGenerator to your project</h2>
+
+<ol>
+<li>Add <i>AVIGenerator.h</i> and <i>AVIGenerator.cpp</i> to your project.</li>
+</ol>
+
+<h2>Non-MFC Applications</h2>
+If you want to use CAviGenerator without MFC, undefine _AVIGENERATOR_MFC in AviGenerator.h. It will disable MFC function calls.
+
+<h2>Demo project</h2>
+
+<p>A simple MFC SDI application that shows a cube and triangle rotating using OpenGL.
+When selecting the menu item Avi Generation-&gt;Generate..., you start
+to create a 100 frames AVI movie.</p>
+
+<p>OpenGL drawing code is copy-pasted from lesson 5 of 
+<a href="http://nehe.gamedev.net/">NeHe Productions</a>.</p>
+
+
+<h2>Update History</h2>
+
+<ul>
+<li><b>21.10.2002</b> Ported to non-MFC application, added HRESULT handling</li>
+<li><b>11.8.2001</b> Other bug fixed. Thanks to Dick W Augustsson.</li>
+<li><b>11.2.2001</b> Bug fixed in setting bitmap header biSizeImage field. Thanks to David.</li>
+<li><b>10.8.2001</b> Bug fixed in <code>~CAviGenerator</code> and in example above (<code>LPBITMAPINFOHEADER lpbih</code> not initialized).</li>
+<li><b>10.5.2001</b> Bug fixed in <code>CAVIGenerator::SetBitmapHeader(LPBITMAPINFOHEADER lpbih)</code> function. Thanks to Lori Gardi.</li>
+</ul>
+
+
+
+
+
+
+
+
+
+<!----------------------------- Article Ends ----------------------------->

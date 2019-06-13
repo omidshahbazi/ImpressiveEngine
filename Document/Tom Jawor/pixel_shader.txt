@@ -1,0 +1,23 @@
+void fmain(
+
+float2 iTexture:TEXCOORD0,
+float3 iViewDir:TEXCOORD1,
+float4 iRayleighColour:TEXCOORD2,
+float4 iMieColour:TEXCOORD3,
+float3 iLightDir : TEXCOORD4,
+float iDepth : TEXCOORD5,
+out float4      oColor      : COLOR0,
+out float4      oNormal : COLOR1,
+uniform sampler2D NightSkyTex
+)
+{
+float Cos = dot(iLightDir, -iViewDir) / length(iViewDir);
+float rayleighPhase = 0.75 + 0.75 * (Cos*Cos);
+float miePhase = 1.5f * ((1.0f - 0.9801f) / (2.0f + 0.9801f)) *
+                (1.0f + Cos*Cos) / pow(1.0f + 0.9801f - 2.0f * 0.99f * Cos, 1.5f);
+float4 final = (iRayleighColour * rayleighPhase + miePhase * iMieColour);
+float daylightStrength = clamp(max(max(final.x, final.y), final.z) * 6, 0, 1);
+final = max(final, tex2D(NightSkyTex, iTexture.xy) * (1-daylightStrength));
+oColor=final;
+oNormal=float4(0,0,0,1.0f);
+}

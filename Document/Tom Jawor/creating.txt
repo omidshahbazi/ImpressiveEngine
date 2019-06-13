@@ -1,0 +1,9 @@
+			AtmosphericScattering=new AtmosphereScatteringCB();
+			Beauty->getShaderLibrary()->registerShader(new beautyInRender::shader::CShaderSource("CG/AtmosphereVertex.cg","CG/AtmospherePixel.cg","AtmosphericScattering",AtmosphericScattering));
+			Beauty->getMaterialLibrary()->registerMaterial(Beauty->getShaderLibrary()->getShader("AtmosphericScattering"));
+			AtmosphericSphere=smgr->addMeshSceneNode(smgr->getGeometryCreator()->createSphereMesh(smgr->getActiveCamera()->getFarValue()/2.0f-100.0f,32,32));//smgr->getMesh("1.3DS"));
+			AtmosphericSphere->setMaterialType(Beauty->getMaterial("AtmosphericScattering"));
+			AtmosphericSphere->setMaterialTexture(0,driver->getTexture("starfield.png"));
+			AtmosphericSphere->setMaterialFlag(EMF_BACK_FACE_CULLING,false);
+			AtmosphericSphere->setMaterialFlag(EMF_FRONT_FACE_CULLING,true);
+			AtmosphericSphere->setAutomaticCulling(EAC_OFF);

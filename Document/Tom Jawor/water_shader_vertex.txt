@@ -1,0 +1,33 @@
+struct VertexToFragment
+{
+
+	float4 ProjCoord:TEXCOORD0;
+	float4 Position : POSITION;
+	float3 LStart:TEXCOORD1;
+	float3 LEnd:TEXCOORD2;
+};
+
+
+VertexToFragment vmain(uniform float4x4 WorldViewProj,float4 Position : POSITION,
+uniform float3 LineStart0,uniform float3 LineStart1,uniform float3 LineStart2,uniform float3 LineStart3,
+uniform float3 LineEnd0,uniform float3 LineEnd1,uniform float3 LineEnd2,uniform float3 LineEnd3)
+{
+	VertexToFragment OUT;
+	
+	OUT.Position=float4(Position.x,Position.y,0.0f,1.0f);//mul(WorldViewProj,Position);
+	float4 ProjCoord;
+	ProjCoord.x=0.5f*(1.0f+Position.x);
+	ProjCoord.y=0.5f*(1.0f+Position.y);
+	
+	OUT.ProjCoord=ProjCoord;
+	ProjCoord.y=1.0f-ProjCoord.y;
+
+	float3 tLStart=lerp(LineStart0,LineStart1,ProjCoord.x);
+	float3 bLStart=lerp(LineStart2,LineStart3,ProjCoord.x);
+	OUT.LStart=lerp(tLStart,bLStart,ProjCoord.y);
+	
+	float3 tLEnd=lerp(LineEnd0,LineEnd1,ProjCoord.x);
+	float3 bLEnd=lerp(LineEnd2,LineEnd3,ProjCoord.x);
+	OUT.LEnd=lerp(tLEnd,bLEnd,ProjCoord.y);
+	return OUT;
+}

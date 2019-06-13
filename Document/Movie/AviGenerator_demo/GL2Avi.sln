@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual C++ Express 2008
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "GL2Avi", "GL2Avi.vcproj", "{858E3D42-7091-4158-BE92-3366EA6A81BC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{858E3D42-7091-4158-BE92-3366EA6A81BC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{858E3D42-7091-4158-BE92-3366EA6A81BC}.Debug|Win32.Build.0 = Debug|Win32
+		{858E3D42-7091-4158-BE92-3366EA6A81BC}.Release|Win32.ActiveCfg = Release|Win32
+		{858E3D42-7091-4158-BE92-3366EA6A81BC}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

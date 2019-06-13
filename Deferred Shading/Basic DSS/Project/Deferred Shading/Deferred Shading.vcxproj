@@ -1,0 +1,108 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9265B5B1-2577-4235-AA07-AE48638CD463}</ProjectGuid>
+    <RootNamespace>DeferredShading</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v100</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>$(CPPLibs)Ogre\include;$(CPPLibs)Boost\include;$(CPPLibs)OIS\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(CPPLibs)Ogre\lib;$(CPPLibs)Boost\lib;$(CPPLibs)OIS\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>OgreMain_d.lib;OIS_d.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="AmbientLight.cpp" />
+    <ClCompile Include="CompositorLogicListener.cpp" />
+    <ClCompile Include="DeferredLightCompositionPass.cpp" />
+    <ClCompile Include="DeferredShadingSystem.cpp" />
+    <ClCompile Include="DirectionalLight.cpp" />
+    <ClCompile Include="DSSMaterialGenerator.cpp" />
+    <ClCompile Include="GBufferMaterialGenerator.cpp" />
+    <ClCompile Include="GBufferSchemeListener.cpp" />
+    <ClCompile Include="DynamicLight.cpp" />
+    <ClCompile Include="LightBase.cpp" />
+    <ClCompile Include="LightMaterialGenerator.cpp" />
+    <ClCompile Include="Main.cpp" />
+    <ClCompile Include="ManualMeshGenerator.cpp" />
+    <ClCompile Include="NullSchemeListener.cpp" />
+    <ClCompile Include="PointLight.cpp" />
+    <ClCompile Include="SpotLight.cpp" />
+    <ClCompile Include="SSAOLogic.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AmbientLight.h" />
+    <ClInclude Include="CompositorLogicListener.h" />
+    <ClInclude Include="DeferredLightCompositionPass.h" />
+    <ClInclude Include="DeferredShadingSystem.h" />
+    <ClInclude Include="Definition.h" />
+    <ClInclude Include="DirectionalLight.h" />
+    <ClInclude Include="DSSMaterialGenerator.h" />
+    <ClInclude Include="GBufferMaterialGenerator.h" />
+    <ClInclude Include="GBufferSchemeListener.h" />
+    <ClInclude Include="DynamicLight.h" />
+    <ClInclude Include="LightBase.h" />
+    <ClInclude Include="LightMaterialGenerator.h" />
+    <ClInclude Include="ManualMeshGenerator.h" />
+    <ClInclude Include="NullSchemeListener.h" />
+    <ClInclude Include="PointLight.h" />
+    <ClInclude Include="SpotLight.h" />
+    <ClInclude Include="SSAOLogic.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

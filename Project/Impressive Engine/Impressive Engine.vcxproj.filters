@@ -1,0 +1,1052 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Editor">
+      <UniqueIdentifier>{0fff5962-f919-4136-8073-18fc994c0117}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="IO">
+      <UniqueIdentifier>{43cead66-1fde-4163-b3c1-64f1f894b2bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tools">
+      <UniqueIdentifier>{29cafa45-1dbc-4381-be30-dcb548ad2f46}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core">
+      <UniqueIdentifier>{4de1de68-ecf1-4c8f-9541-0eaa5a0f343c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic">
+      <UniqueIdentifier>{1666314e-616f-4f3f-ad39-5202088b0fc3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System">
+      <UniqueIdentifier>{e8f220cd-72e8-45f3-8b18-5906ff72e69a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="System\Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="Core\GameObject">
+      <UniqueIdentifier>{d3d91bb0-f970-48fc-9374-9a96424f1a32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Animator">
+      <UniqueIdentifier>{2d20c67a-629a-4c26-9549-1e1fed4acc6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Graphic\Deferred Shading">
+      <UniqueIdentifier>{3eef8327-5375-4227-9898-a775c384f206}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Virtual Machine">
+      <UniqueIdentifier>{326360b5-c1fe-403f-8b10-4e1a55639611}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Threading">
+      <UniqueIdentifier>{78b34b11-0c92-4f2e-a536-3f9ec62f5083}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Helper">
+      <UniqueIdentifier>{68ddb6f1-21ce-4df4-9443-79ab6fc1de12}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Core\Scene Management">
+      <UniqueIdentifier>{a856b662-7433-4fa1-846b-befe7e1c6863}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Editor\GUI">
+      <UniqueIdentifier>{e7812128-87b7-4403-a41b-480ab7257ea8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI">
+      <UniqueIdentifier>{dbec8a92-6956-486e-98f5-9a712a028b2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Messaging">
+      <UniqueIdentifier>{2cc6e83c-1f4b-4bd6-863e-f89832a260c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Graph">
+      <UniqueIdentifier>{d01c2753-1889-4e1d-97da-4936dde2473f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Pathfinding">
+      <UniqueIdentifier>{4ec6d488-b6f3-4a35-9ebb-df225c46f088}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\State Machine">
+      <UniqueIdentifier>{588b2029-6ce1-43c0-8555-ec96553f25bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\State Machine\Evaluators">
+      <UniqueIdentifier>{1d196142-fa02-41c6-b15f-420cefc43d06}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\State Machine\Sub States">
+      <UniqueIdentifier>{9fa4724e-b5d7-4077-9f89-5f1cf5163251}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\State Machine\Base States">
+      <UniqueIdentifier>{f5744dfe-545a-4bbe-83ec-917b6c153f28}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\State Machine\Main States">
+      <UniqueIdentifier>{5d070535-6cdd-4206-8901-ca7c7bc62cbe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Steering Behavior">
+      <UniqueIdentifier>{36f232d5-8d72-4d73-8939-9af4d1a0ce42}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Memory Sensor">
+      <UniqueIdentifier>{4151a0a0-3c40-4965-8b96-c4cce41f1be0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Core">
+      <UniqueIdentifier>{acee9da5-aa36-4a17-be99-ed2ef32b46c5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Core\AIObject">
+      <UniqueIdentifier>{89bb0d86-68d4-4ee1-81b3-66d0c4e73495}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Core\AIObject\Civilians">
+      <UniqueIdentifier>{2c842f57-eeef-4730-aa84-0048d667a36d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Core\AIObject\Enemies">
+      <UniqueIdentifier>{d0f53881-5c5d-4d2f-9743-6eee72ad6b6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Core\AIObject\Base Classes">
+      <UniqueIdentifier>{6ce5ebbe-4e34-4e18-94c7-0c9d61879bb5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="AI\Tools">
+      <UniqueIdentifier>{4cb80545-8f98-445d-9f3b-8a774c0d4e1b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Physics">
+      <UniqueIdentifier>{f190def2-6d60-4bbb-9c7e-95a8eae92f7e}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AdditionProperties.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="AtmosphereManager.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="Attributes.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="AVIRecorder.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="CameraGameObject.cpp">
+      <Filter>Core\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObject.cpp">
+      <Filter>Core\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="LightGameObject.cpp">
+      <Filter>Core\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="OceanGameObject.cpp">
+      <Filter>Core\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleGameObject.cpp">
+      <Filter>Core\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="MeshGameObject.cpp">
+      <Filter>Core\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainGameObject.cpp">
+      <Filter>Core\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="CoreFunctionality.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="DoClasses.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Editor.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorCamera.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="FrameListener.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Engine.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Entity.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="Exception.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="File.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="FileSecurity.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Gorilla.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="HID.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="IO.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Log.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="ManualFunctionality.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Mathematics.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Properties.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="RegistryKey.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="Stats.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemTime.cpp">
+      <Filter>Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="VideoCapture.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="ViewPortsManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="Message.cpp">
+      <Filter>AI\Messaging</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageDispatcher.cpp">
+      <Filter>AI\Messaging</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphEdge.cpp">
+      <Filter>AI\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphNode.cpp">
+      <Filter>AI\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="GraphSearchAstar.cpp">
+      <Filter>AI\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="PathEdge.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManager.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="PathPlanner.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="Edge.cpp">
+      <Filter>AI\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="GameObjectFactory.cpp">
+      <Filter>Core\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateGuardEvaluator.cpp">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateIdleEvaluator.cpp">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStatePathFollow.cpp">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateSeekToPosition.cpp">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateMoveToPosition.cpp">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateTraverseEdge.cpp">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIBrain.cpp">
+      <Filter>AI\State Machine\Base States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateGuard.cpp">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeElement.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="TreeParser.cpp">
+      <Filter>IO</Filter>
+    </ClCompile>
+    <ClCompile Include="OgreDebugDrawer.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="DebugDrawer.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateExplore.cpp">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateExploreEvaluator.cpp">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="AIMemorySensor.cpp">
+      <Filter>AI\Memory Sensor</Filter>
+    </ClCompile>
+    <ClCompile Include="Animator.cpp">
+      <Filter>Core\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="TrackAnimator.cpp">
+      <Filter>Core\Animator</Filter>
+    </ClCompile>
+    <ClCompile Include="PathManagerThreadWorker.cpp">
+      <Filter>AI\Pathfinding</Filter>
+    </ClCompile>
+    <ClCompile Include="AITimer.cpp">
+      <Filter>AI\Tools</Filter>
+    </ClCompile>
+    <ClCompile Include="AIEngine.cpp">
+      <Filter>AI\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="ShadowManager.cpp">
+      <Filter>Graphic</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptTypesDefinition.cpp">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="Scriptable.cpp">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="Script.cpp">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualMachine.cpp">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="VirtualMachineDebugger.cpp">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadHandler.cpp">
+      <Filter>Core\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="ThreadingManager.cpp">
+      <Filter>Core\Threading</Filter>
+    </ClCompile>
+    <ClCompile Include="Ray.cpp">
+      <Filter>Core\Helper</Filter>
+    </ClCompile>
+    <ClCompile Include="NodeBase.cpp">
+      <Filter>Core\Scene Management</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene.cpp">
+      <Filter>Core\Scene Management</Filter>
+    </ClCompile>
+    <ClCompile Include="ScenesHolder.cpp">
+      <Filter>Core\Scene Management</Filter>
+    </ClCompile>
+    <ClCompile Include="AboutWindow.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="AnimationControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="LogControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="MainWindow.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialEditorControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialPageControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ModelEditorControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="PropertiesControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="RenderControlBase.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ScintillaPageControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="ScriptPageControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="StatusBarControl.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="TerrainWindow.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="WindowBase.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorListener.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="SteeringBehaviors.cpp">
+      <Filter>AI\Steering Behavior</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateSeller.cpp">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateSellerEvaluator.cpp">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateShopping.cpp">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateShoppingEvaluator.cpp">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="AISellerObject.cpp">
+      <Filter>AI\Core\AIObject\Civilians</Filter>
+    </ClCompile>
+    <ClCompile Include="AINPCObject.cpp">
+      <Filter>AI\Core\AIObject\Civilians</Filter>
+    </ClCompile>
+    <ClCompile Include="AIEnemyObject.cpp">
+      <Filter>AI\Core\AIObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="CustomerStand.cpp">
+      <Filter>AI\Core\AIObject\Civilians</Filter>
+    </ClCompile>
+    <ClCompile Include="AICommanderObject.cpp">
+      <Filter>AI\Core\AIObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="AISoldierObject.cpp">
+      <Filter>AI\Core\AIObject\Enemies</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateCommanderEvaluator.cpp">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateCommander.cpp">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClCompile>
+    <ClCompile Include="AIObject.cpp">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="BaseObject.cpp">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="MovingObject.cpp">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateIdle.cpp">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClCompile>
+    <ClCompile Include="Node.cpp">
+      <Filter>AI\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="SparseGraph.cpp">
+      <Filter>AI\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="SparseGraphThreadWorker.cpp">
+      <Filter>AI\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="NavigationGraph.cpp">
+      <Filter>AI\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="GameMap.cpp">
+      <Filter>AI\Graph</Filter>
+    </ClCompile>
+    <ClCompile Include="NavGraphGenWindow.cpp">
+      <Filter>Editor\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="AIObjectFeatures.cpp">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorScene.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="AIStateWallFollow.cpp">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClCompile>
+    <ClCompile Include="CompilerSettings.h">
+      <Filter>System</Filter>
+    </ClCompile>
+    <ClCompile Include="DeferredShadingSystem.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="AmbientLight.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="DSLightRenderable.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="DSMaterialGenerator.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="Light.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="LightMaterialGenerator.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="GBufferMaterialGenerator.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="GBufferSchemeListener.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="NoGBufferSchemeListener.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="DeferredLightingPass.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="MaterialGenerator.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorMaterialGenerator.cpp">
+      <Filter>Editor</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneMaterialGenerator.cpp">
+      <Filter>Core\Scene Management</Filter>
+    </ClCompile>
+    <ClCompile Include="DSTerrainMaterialGenerator.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="DSCommon.cpp">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClCompile>
+    <ClCompile Include="PluginManager.cpp">
+      <Filter>Core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdditionProperties.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="AtmosphereManager.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="Attribute.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Attributes.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="AVIRecorder.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="CameraGameObject.h">
+      <Filter>Core\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObject.h">
+      <Filter>Core\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="LightGameObject.h">
+      <Filter>Core\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="MeshGameObject.h">
+      <Filter>Core\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="OceanGameObject.h">
+      <Filter>Core\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleGameObject.h">
+      <Filter>Core\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="CoreFunctionality.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="DoClasses.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Editor.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorCamera.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="FrameListener.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Engine.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Exception.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="File.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="FileSecurity.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Gorilla.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="HID.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="IO.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="IPropertiesListener.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Log.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="ManualFunctionality.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Mathematics.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="Properties.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="RegistryKey.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfxBoost.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfxLua.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfxOGRE.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfxScintilla.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfxTheora.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfxwxWidgets.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemTime.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainGameObject.h">
+      <Filter>Core\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility.h">
+      <Filter>Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="VideoCapture.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="ViewPortsManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Entity.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="Stats.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="ISerializable.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="Message.h">
+      <Filter>AI\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageDispatcher.h">
+      <Filter>AI\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageTypes.h">
+      <Filter>AI\Messaging</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphEdge.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphNode.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphSearchAstar.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphSearchTimeSliced.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="PathEdge.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="PathManager.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="PathPlanner.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="Edge.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="GameObjectFactory.h">
+      <Filter>Core\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateEvaluator.h">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateGuardEvaluator.h">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateIdleEvaluator.h">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateMoveToPosition.h">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStatePathFollow.h">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateSeekToPosition.h">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateTraverseEdge.h">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIBrain.h">
+      <Filter>AI\State Machine\Base States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIDecisionMaker.h">
+      <Filter>AI\State Machine\Base States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIState.h">
+      <Filter>AI\State Machine\Base States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateGuard.h">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateTypes.h">
+      <Filter>AI\State Machine\Base States</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeParser.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeElement.h">
+      <Filter>IO</Filter>
+    </ClInclude>
+    <ClInclude Include="OgreDebugDrawer.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="DebugDrawer.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateExplore.h">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateExploreEvaluator.h">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="AIMemorySensor.h">
+      <Filter>AI\Memory Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="AIMemoryRecord.h">
+      <Filter>AI\Memory Sensor</Filter>
+    </ClInclude>
+    <ClInclude Include="TrackAnimator.h">
+      <Filter>Core\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="Animator.h">
+      <Filter>Core\Animator</Filter>
+    </ClInclude>
+    <ClInclude Include="PathManagerThreadWorker.h">
+      <Filter>AI\Pathfinding</Filter>
+    </ClInclude>
+    <ClInclude Include="AIEngine.h">
+      <Filter>AI\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="AITimer.h">
+      <Filter>AI\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="PriorityQueue.h">
+      <Filter>AI\Tools</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadowManager.h">
+      <Filter>Graphic</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptRegister.h">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="Scriptable.h">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="Script.h">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptTypesDefinition.h">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualMachine.h">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="VirtualMachineDebugger.h">
+      <Filter>Core\Virtual Machine</Filter>
+    </ClInclude>
+    <ClInclude Include="IThreadWorker.h">
+      <Filter>Core\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadHandler.h">
+      <Filter>Core\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadingManager.h">
+      <Filter>Core\Threading</Filter>
+    </ClInclude>
+    <ClInclude Include="Ray.h">
+      <Filter>Core\Helper</Filter>
+    </ClInclude>
+    <ClInclude Include="NodeBase.h">
+      <Filter>Core\Scene Management</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Core\Scene Management</Filter>
+    </ClInclude>
+    <ClInclude Include="ScenesHolder.h">
+      <Filter>Core\Scene Management</Filter>
+    </ClInclude>
+    <ClInclude Include="AboutWindow.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="AnimationControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="EntityControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="LogControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="MainWindow.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialEditorControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialPageControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ModelEditorControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="PropertiesControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderControlBase.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ScintillaPageControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="ScriptPageControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="StatusBarControl.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="TerrainWindow.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="WindowBase.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorListener.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviors.h">
+      <Filter>AI\Steering Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="SteeringBehaviorTypes.h">
+      <Filter>AI\Steering Behavior</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateSeller.h">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateSellerEvaluator.h">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateShopping.h">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateShoppingEvaluator.h">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="AISellerObject.h">
+      <Filter>AI\Core\AIObject\Civilians</Filter>
+    </ClInclude>
+    <ClInclude Include="AINPCObject.h">
+      <Filter>AI\Core\AIObject\Civilians</Filter>
+    </ClInclude>
+    <ClInclude Include="AIEnemyObject.h">
+      <Filter>AI\Core\AIObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="CustomerStand.h">
+      <Filter>AI\Core\AIObject\Civilians</Filter>
+    </ClInclude>
+    <ClInclude Include="AICommanderObject.h">
+      <Filter>AI\Core\AIObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="AISoldierObject.h">
+      <Filter>AI\Core\AIObject\Enemies</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateCommanderEvaluator.h">
+      <Filter>AI\State Machine\Evaluators</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateCommander.h">
+      <Filter>AI\State Machine\Main States</Filter>
+    </ClInclude>
+    <ClInclude Include="AIObject.h">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AIObjectType.h">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseObject.h">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="MovingObject.h">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateIdle.h">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClInclude>
+    <ClInclude Include="Node.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="SparseGraph.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="SparseGraphThreadWorker.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="NavigationGraph.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="GameMap.h">
+      <Filter>AI\Graph</Filter>
+    </ClInclude>
+    <ClInclude Include="NavGraphGenWindow.h">
+      <Filter>Editor\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="AIObjectFeatures.h">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="WaypointType.h">
+      <Filter>AI\Core\AIObject\Base Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorScene.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="AIStateWallFollow.h">
+      <Filter>AI\State Machine\Sub States</Filter>
+    </ClInclude>
+    <ClInclude Include="StdAfxOIS.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>System\Resource Files</Filter>
+    </ClInclude>
+    <ClInclude Include="DeferredShadingSystem.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="AmbientLight.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="DSLightRenderable.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="DSMaterialGenerator.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="Light.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="LightMaterialGenerator.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="GBufferMaterialGenerator.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="GBufferSchemeListener.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="NoGBufferSchemeListener.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="DeferredLightingPass.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="MaterialGenerator.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorMaterialGenerator.h">
+      <Filter>Editor</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneMaterialGenerator.h">
+      <Filter>Core\Scene Management</Filter>
+    </ClInclude>
+    <ClInclude Include="DSTerrainMaterialGenerator.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="DSCommon.h">
+      <Filter>Graphic\Deferred Shading</Filter>
+    </ClInclude>
+    <ClInclude Include="IPhysicsEngine.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="IPhysicsScene.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="IRigidBody.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="PluginManager.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="IPlugin.h">
+      <Filter>Core</Filter>
+    </ClInclude>
+    <ClInclude Include="Common.h">
+      <Filter>System</Filter>
+    </ClInclude>
+    <ClInclude Include="IDynamicRigidBody.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="IStaticRigidBody.h">
+      <Filter>Physics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Icon.ico">
+      <Filter>System\Resource Files</Filter>
+    </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Impressive Engine.rc">
+      <Filter>System\Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

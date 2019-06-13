@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BulletSample", "BulletSample\BulletSample.vcxproj", "{3AE2464B-8EB1-4549-9AF5-C5E277424270}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhysXSample", "PhysXSample\PhysXSample.vcxproj", "{25127690-9262-45BA-AF60-38EB2D955191}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PhysicsFramework", "PhysicsFramework\PhysicsFramework.vcxproj", "{BDA2F898-E963-4C66-8A33-C24BC785818D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AE2464B-8EB1-4549-9AF5-C5E277424270}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3AE2464B-8EB1-4549-9AF5-C5E277424270}.Debug|Win32.Build.0 = Debug|Win32
+		{3AE2464B-8EB1-4549-9AF5-C5E277424270}.Release|Win32.ActiveCfg = Release|Win32
+		{3AE2464B-8EB1-4549-9AF5-C5E277424270}.Release|Win32.Build.0 = Release|Win32
+		{25127690-9262-45BA-AF60-38EB2D955191}.Debug|Win32.ActiveCfg = Debug|Win32
+		{25127690-9262-45BA-AF60-38EB2D955191}.Debug|Win32.Build.0 = Debug|Win32
+		{25127690-9262-45BA-AF60-38EB2D955191}.Release|Win32.ActiveCfg = Release|Win32
+		{25127690-9262-45BA-AF60-38EB2D955191}.Release|Win32.Build.0 = Release|Win32
+		{BDA2F898-E963-4C66-8A33-C24BC785818D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{BDA2F898-E963-4C66-8A33-C24BC785818D}.Debug|Win32.Build.0 = Debug|Win32
+		{BDA2F898-E963-4C66-8A33-C24BC785818D}.Release|Win32.ActiveCfg = Release|Win32
+		{BDA2F898-E963-4C66-8A33-C24BC785818D}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

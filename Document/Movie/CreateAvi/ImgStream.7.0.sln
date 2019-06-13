@@ -1,0 +1,21 @@
+Microsoft Visual Studio Solution File, Format Version 7.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ImgStream", "ImgStream.7.0.vcproj", "{D9A421CF-E308-4854-A8A1-CF1F505BDC8D}"
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		ConfigName.0 = Debug
+		ConfigName.1 = Release
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{D9A421CF-E308-4854-A8A1-CF1F505BDC8D}.Debug.ActiveCfg = Debug|Win32
+		{D9A421CF-E308-4854-A8A1-CF1F505BDC8D}.Debug.Build.0 = Debug|Win32
+		{D9A421CF-E308-4854-A8A1-CF1F505BDC8D}.Release.ActiveCfg = Release|Win32
+		{D9A421CF-E308-4854-A8A1-CF1F505BDC8D}.Release.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal
